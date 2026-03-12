@@ -1,0 +1,25 @@
+# Firebase secrets — NEVER commit these
+serviceAccountKey.json
+.env
+webapp/.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+*.egg-info/
+parking.log
+
+# Node
+webapp/node_modules/
+webapp/build/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
