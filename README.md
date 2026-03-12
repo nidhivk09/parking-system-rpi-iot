@@ -227,6 +227,3 @@ POLL_INTERVAL = 1.0    # Read sensors every 1 second
 
 ---
 
-## 📜 License
-
-MIT — free to use, modify, and deploy.
