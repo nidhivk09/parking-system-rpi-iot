@@ -23,3 +23,8 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+
+# Images
+*.jpeg
+*.jpg
+*.png

@@ -31,8 +31,7 @@ FIREBASE_DATABASE_URL = "https://YOUR-PROJECT-ID-default-rtdb.firebaseio.com/"
 PARKING_SLOTS = {
     "slot_1": {"out": 17, "label": "Slot A1"},
     "slot_2": {"out": 27, "label": "Slot A2"},
-    "slot_3": {"out": 22, "label": "Slot B1"},
-    "slot_4": {"out": 23, "label": "Slot B2"},
+    "slot_3": {"out": 22, "label": "Slot A3"},
 }
 
 # IR sensors output LOW when obstacle detected (active-low).

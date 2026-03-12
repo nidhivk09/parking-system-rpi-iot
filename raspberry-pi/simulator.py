@@ -8,18 +8,20 @@ Run: python3 simulator.py
 import time
 import random
 import logging
+import os
 from datetime import datetime
 import firebase_admin
 from firebase_admin import credentials, db
 
-FIREBASE_CREDENTIALS_PATH = "serviceAccountKey.json"
-FIREBASE_DATABASE_URL = "https://YOUR-PROJECT-ID-default-rtdb.firebaseio.com/"
+# Get the directory where this script is located
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+FIREBASE_CREDENTIALS_PATH = os.path.join(SCRIPT_DIR, "serviceAccountKey.json")
+FIREBASE_DATABASE_URL = "https://parking-system-a2af6-default-rtdb.asia-southeast1.firebasedatabase.app/"
 
 PARKING_SLOTS = {
     "slot_1": {"label": "Slot A1"},
     "slot_2": {"label": "Slot A2"},
-    "slot_3": {"label": "Slot B1"},
-    "slot_4": {"label": "Slot B2"},
+    "slot_3": {"label": "Slot A3"},
 }
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")

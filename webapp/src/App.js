@@ -116,11 +116,14 @@ function App() {
       parkingRef,
       (snapshot) => {
         const data = snapshot.val();
+        setConnected(true);
+        setLastUpdated(new Date());
+        setError(null);
         if (data) {
           setParkingData(data);
-          setConnected(true);
-          setLastUpdated(new Date());
-          setError(null);
+        } else {
+          // No data yet - set empty structure
+          setParkingData({ slots: {}, summary: { total: 0, available: 0, occupied: 0 } });
         }
       },
       (err) => {
@@ -190,9 +193,16 @@ function App() {
             </div>
 
             <div className="slots-grid">
-              {Object.entries(slots).map(([slotId, data], idx) => (
-                <SlotCard key={slotId} slotId={slotId} data={data} index={idx} />
-              ))}
+              {Object.keys(slots).length === 0 ? (
+                <div className="no-slots-message">
+                  <p>No parking slots configured yet.</p>
+                  <p>Run the simulator: <code>cd raspberry-pi && python simulator.py</code></p>
+                </div>
+              ) : (
+                Object.entries(slots).map(([slotId, data], idx) => (
+                  <SlotCard key={slotId} slotId={slotId} data={data} index={idx} />
+                ))
+              )}
             </div>
           </>
         )}

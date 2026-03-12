@@ -480,3 +480,29 @@ body {
 @media (max-width: 400px) {
   .slots-grid { grid-template-columns: 1fr; }
 }
+
+/* ── No Slots Message ─────────────────────────── */
+.no-slots-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 48px 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-muted);
+}
+
+.no-slots-message p {
+  margin-bottom: 12px;
+}
+
+.no-slots-message code {
+  background: var(--surface2);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--green);
+  display: inline-block;
+  margin-top: 8px;
+}
